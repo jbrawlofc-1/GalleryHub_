@@ -1,0 +1,329 @@
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --ink: #16181c;
+  --gray-600: #5b6167;
+  --gray-400: #8a9099;
+  --gray-200: #e7e9ec;
+  --gray-100: #f4f5f6;
+  --white: #ffffff;
+  --accent: #05a081;
+  --radius: 8px;
+}
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--white);
+}
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 14px 32px;
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.menu-top {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+}
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  transform: translateY(-3px);
+}
+.search-wrap {
+  flex: 1;
+  max-width: 640px;
+}
+#search {
+  width: 100%;
+  border-radius: 999px;
+  border: 1.5px solid var(--gray-200);
+  padding: 11px 18px;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--gray-100);
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+#search:focus {
+  border-color: var(--ink);
+  background: var(--white);
+}
+.menu nav {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+.menu nav a {
+  padding: 9px 16px;
+  color: var(--gray-600);
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.menu nav a:hover {
+  background: var(--gray-100);
+  color: var(--ink);
+}
+.hero {
+  padding: 56px 32px 32px;
+  max-width: 900px;
+}
+.hero p {
+  margin-top: 10px;
+  font-size: 1.05rem;
+  color: var(--gray-600);
+}
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.title p {
+  font-size: 2rem;
+  margin: 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: black;
+  transition: transform 0.2s ease, color 4s ease;
+}
+.title p:hover {
+  transform: translateX(-3px);
+  color: hsl(calc(var(--i) * 9.6), 85%, 55%);
+  transition: transform 0.2s ease, color 0s;
+}
+.space {
+  width: 11px;
+}
+.container-geral {
+  padding: 8px 24px 48px;
+  column-count: 4;
+  column-gap: 16px;
+}
+.bloco {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  background: var(--gray-100);
+}
+.bloco img {
+  width: 100%;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.bloco:hover img {
+  transform: scale(1.04);
+}
+.btn-coracao {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  color: var(--gray-400);
+}
+.bloco:hover .btn-coracao {
+  opacity: 1;
+}
+.btn-coracao:hover {
+  transform: scale(1.1);
+  background: var(--white);
+  color: var(--ink);
+}
+.btn-coracao svg {
+  width: 20px;
+  height: 20px;
+}
+.btn-coracao.ativo {
+  color: #e63946;
+}
+.nome-foto {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 14px 12px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.bloco:hover .nome-foto {
+  opacity: 1;
+}
+section {
+  scroll-margin-top: 80px;
+}
+.sobre {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 56px 32px;
+  max-width: 900px;
+  margin: 0 auto;
+  border-top: 1px solid var(--gray-200);
+}
+.sobre img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.sobre h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.sobre p {
+  color: var(--gray-600);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.contato-form {
+  padding: 56px 32px 64px;
+  max-width: 640px;
+  margin: 0 auto;
+  border-top: 1px solid var(--gray-200);
+}
+.contato-form h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.contato-form>p {
+  color: var(--gray-600);
+  margin-bottom: 28px;
+}
+.campo {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.campo label {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.campo input[type="text"],
+.campo input[type="email"],
+.campo textarea {
+  border-radius: var(--radius);
+  border: 1.5px solid var(--gray-200);
+  padding: 11px 16px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--ink);
+  background: var(--gray-100);
+  outline: none;
+}
+.campo input:focus,
+.campo textarea:focus {
+  border-color: var(--ink);
+  background: var(--white);
+}
+.arquivo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.arquivo-wrap input[type="file"] {
+  display: none;
+}
+.arquivo-botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1.5px solid var(--gray-200);
+  background: var(--white);
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.arquivo-botao svg {
+  width: 16px;
+  height: 16px;
+}
+.arquivo-nome {
+  font-size: 0.88rem;
+  color: var(--gray-400);
+}
+.btn-enviar {
+  padding: 13px 30px;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 6px;
+}
+.notificacao {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--accent);
+  color: var(--white);
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1000;
+}
+.notificacao.mostrar {
+  display: block;
+}
+footer {
+  padding: 16px 24px;
+  background: var(--ink);
+  color: var(--gray-200);
+  text-align: center;
+  font-size: 0.85rem;
+}
+footer .contato {
+  color: var(--white);
+  font-weight: 600;
+  margin: 4px 0;
+}
+footer .rights {
+  color: var(--gray-400);
+  font-size: 0.8rem;
+}
